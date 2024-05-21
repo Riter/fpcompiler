@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Your awesome title | Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Your awesome title" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<meta property="og:description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="Your awesome title" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Your awesome title" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.","headline":"Your awesome title","name":"Your awesome title","url":"http://localhost:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Your awesome title" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Your awesome title</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home"><h1 id="функциональное-программирование-пишем-компилятор">Функциональное программирование: Пишем компилятор!</h1>
+
+<p>Цель этой лабораторной работы - придумать свой собственный функциональный язык программирования и разработать для него интерпретатор или компилятор.</p>
+
+<p>Вы можете выполнить эту лабораторную работу в группе из 2 или 3 человек (или больше - но это требует одобрения преподавателя):</p>
+
+<ul>
+  <li>2 человека - компилятор/интерпретатор + примеры программ + краткая документация в README.md (вы можете заменить этот файл своей собственной документацией)</li>
+  <li>3 человека - компилятор/интерпретатор + примеры программ + более подробная документация на GitHub Pages</li>
+</ul>
+
+<h2 id="задача">Задача</h2>
+
+<p>Ваша цель - изобрести и реализовать собственный функциональный язык программирования. Требования:</p>
+
+<ul>
+  <li>Он должен тесно следовать парадигме функционального программирования, на основе либо <a href="https://en.wikipedia.org/wiki/Lambda_calculus">лямбда-исчисления</a>, либо <a href="https://en.wikipedia.org/wiki/Combinatory_logic">комбинаторной логики</a>.</li>
+  <li>Он должен быть более или менее универсальным, т.е. реализовывать рекурсию. В идеале - полным по Тьюрингу.</li>
+  <li>Как минимум, язык должен позволять запрограммировать функцию для расчета факториала.</li>
+</ul>
+
+<blockquote>
+  <p>Имейте в виду, что написание парсеров - это утомительная задача, поэтому постарайтесь сделать синтаксис языка как можно проще.</p>
+</blockquote>
+
+<p>Для вдохновения:</p>
+
+<ul>
+  <li>Изучите <a href="https://books.ifmo.ru/file/pdf/1918.pdf">LISP</a> - язык программирования с очень простым синтаксисом.</li>
+  <li>Комбинаторные парсеры и библиотеку <a href="https://www.quanttec.com/fparsec/">fparsec</a>, если вы хотите реализовать язык с более сложным синтаксисом.</li>
+  <li><a href="https://github.com/fholm/Vaughan">Top-Down Parser на F#</a>.</li>
+  <li>Интересный блог пост о <a href="https://www.erikschierboom.com/2016/12/10/parsing-text-in-fsharp/">парсинге на F#</a>.</li>
+  <li>Парсинг с использованием инструментов <a href="https://realfiction.net/posts/lexing-and-parsing-in-f/">FsLex и FsYacc</a> (не рекомендуется).</li>
+  <li>Реализация <a href="https://github.com/AshleyF/FScheme">Scheme в F#</a> - вы можете ознакомиться с этим проектом для вдохновения, но не заимствуйте код оттуда!</li>
+</ul>
+
+<h2 id="критерии-оценки">Критерии оценки</h2>
+
+<ul>
+  <li>Универсальность</li>
+  <li>Примеры программ (включая факториал, но не ограничиваясь им)</li>
+  <li>Оригинальность и красота синтаксиса</li>
+  <li>Документированность</li>
+  <li>Красота реализации</li>
+</ul>
+
+<p>Предпочтительный язык реализации - F#.</p>
+
+<p>В документации явно укажите, какие функции языка вы реализовали:</p>
+
+<ul class="task-list">
+  <li>[+] Именованные переменные (<code class="language-plaintext highlighter-rouge">let</code>)</li>
+  <li>[+] Рекурсия</li>
+  <li>[+] Ленивое вычисление</li>
+  <li>[+] Функции</li>
+  <li>[+] Замыкания</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Библиотечные функции: ввод-вывод файлов</li>
+  <li class="task-list-item">[+] Списки / Последовательности</li>
+  <li class="task-list-item">[+] Библиотечные функции: списки/последовательности</li>
+</ul>
+
+<h2 id="репозиторий">Репозиторий</h2>
+
+<p>Вам необходимо работать над кодом в репозитории GitHub Classroom. После завершения задачи <strong>настоятельно рекомендуется</strong> форкнуть этот код в свои собственные аккаунты GitHub, чтобы он служил вашим портфолио.</p>
+
+<h2 id="пошаговая-работа">Пошаговая работа</h2>
+
+<p>Поскольку проект довольно большой, его нужно делать поэтапно, загружая ваш код в GitHub на каждом этапе:</p>
+
+<ul>
+  <li>Этап 1: Разработка абстрактного синтаксического дерева и парсера для вашего языка + одна примерная программа.</li>
+  <li>Этап 2: Разработка интерпретатора/компилятора для вашего языка.</li>
+  <li>Этап 3: Написание примеров программ и документации.</li>
+</ul>
+
+<blockquote>
+  <p>Конечно, вы можете изменять язык на более поздних этапах, если посчитаете это нужным.</p>
+</blockquote>
+
+<h2 id="авторы">Авторы</h2>
+
+<p>Не забудьте упомянуть свою команду в файле README.md, указав также, кто что делал. Также файл README.md должен включать краткое руководство по вашему языку и некоторые короткие примеры кода.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Имя</th>
+      <th>Роль в проекте</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Пирязев Михаил Александрович</td>
+      <td>Разработка документации, парсера</td>
+    </tr>
+    <tr>
+      <td>Бычков Дмитрий Андреевич</td>
+      <td>Разработка парсера</td>
+    </tr>
+    <tr>
+      <td>Иванов Илья Михайлович</td>
+      <td>Разработка интерпретатора</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="описание-модулей">Описание модулей</h3>
+
+<h4 id="astfs">AST.fs</h4>
+
+<p>Модуль <code class="language-plaintext highlighter-rouge">AST</code> определяет абстрактное синтаксическое дерево (AST) для нашего функционального языка программирования. AST используется для представления синтаксической структуры программ. Оно включает различные типы выражений, которые поддерживает наш язык:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Op</code> - Операция с операторами (например, <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">Num</code> - Числовые литералы.</li>
+  <li><code class="language-plaintext highlighter-rouge">Str</code> - Строковые литералы.</li>
+  <li><code class="language-plaintext highlighter-rouge">Id</code> - Идентификаторы переменных и функций.</li>
+  <li><code class="language-plaintext highlighter-rouge">Bool</code> - Булевы значения (true/false).</li>
+  <li><code class="language-plaintext highlighter-rouge">Cond</code> - Условные выражения (if-then-else).</li>
+  <li><code class="language-plaintext highlighter-rouge">Var</code> - Определение переменных.</li>
+  <li><code class="language-plaintext highlighter-rouge">Set</code> - Присваивание значений переменным.</li>
+  <li><code class="language-plaintext highlighter-rouge">Func</code> - Определение функций.</li>
+  <li><code class="language-plaintext highlighter-rouge">Call</code> - Вызов функций.</li>
+  <li><code class="language-plaintext highlighter-rouge">Print</code> - Вывод выражений.</li>
+  <li><code class="language-plaintext highlighter-rouge">Simple</code> - Простые выражения (ключевые слова).</li>
+  <li><code class="language-plaintext highlighter-rouge">SimpleOp</code> - Простые операции.</li>
+  <li><code class="language-plaintext highlighter-rouge">SimpleList</code> - Список выражений.</li>
+  <li><code class="language-plaintext highlighter-rouge">SimpleArgs</code> - Список аргументов функций.</li>
+</ul>
+
+<p>Каждое выражение может включать вложенные выражения и окружение переменных (для функций).</p>
+
+<h4 id="lexerfs">Lexer.fs</h4>
+
+<p>Модуль <code class="language-plaintext highlighter-rouge">Lexer</code> отвечает за лексический анализ исходного кода. Он преобразует входной текст программы в последовательность токенов. Токены представляют собой элементарные синтаксические единицы, такие как ключевые слова, операторы, идентификаторы и литералы.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Token</code> - определяет типы токенов, включая операторы (<code class="language-plaintext highlighter-rouge">Op</code>), числовые литералы (<code class="language-plaintext highlighter-rouge">Num</code>), строковые литералы (<code class="language-plaintext highlighter-rouge">Str</code>), идентификаторы (<code class="language-plaintext highlighter-rouge">Id</code>), открывающие и закрывающие скобки (<code class="language-plaintext highlighter-rouge">LParen</code> и <code class="language-plaintext highlighter-rouge">RParen</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">tokenize</code> - основная функция, которая принимает исходный код и разбивает его на токены. Она обрабатывает пробелы, строки, идентификаторы и числа, используя вспомогательные функции <code class="language-plaintext highlighter-rouge">readString</code>, <code class="language-plaintext highlighter-rouge">readId</code>, <code class="language-plaintext highlighter-rouge">readNum</code>.</li>
+</ul>
+
+<h4 id="superparser2004fs">SuperParser2004.fs</h4>
+
+<p>Модуль <code class="language-plaintext highlighter-rouge">SuperParser2004</code> выполняет синтаксический анализ последовательности токенов, создавая абстрактное синтаксическое дерево (AST) программы.</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">parse</code> - основная функция, которая принимает список токенов и возвращает AST. Она включает в себя несколько вспомогательных функций:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">parseExprs</code> - рекурсивно обрабатывает список токенов, создавая список выражений.</li>
+      <li><code class="language-plaintext highlighter-rouge">buildAst</code> - преобразует список выражений в соответствующие узлы AST, основываясь на синтаксических конструкциях языка.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Функция <code class="language-plaintext highlighter-rouge">parse</code> обрабатывает такие конструкции, как определения функций, переменные, присваивания, условные выражения, вызовы функций и операции. Она также включает проверку на наличие оставшихся необработанных токенов, что помогает выявить ошибки синтаксического анализа.</p>
+
+<h3 id="interpretatorfs">Interpretator.fs</h3>
+
+<p>Модуль <code class="language-plaintext highlighter-rouge">Interpretator</code> отвечает за выполнение программ, написанных на нашем функциональном языке программирования. Интерпретатор обрабатывает абстрактное синтаксическое дерево (AST), созданное парсером, и вычисляет результаты выражений.</p>
+
+<h4 id="основные-функции">Основные функции</h4>
+
+<h5 id="eval">eval</h5>
+<p>Функция <code class="language-plaintext highlighter-rouge">eval</code> рекурсивно вычисляет значение выражений, основываясь на текущем окружении (env). Окружение представляет собой карту, связывающую идентификаторы с их значениями.</p>
+
+<div class="language-fsharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="k">rec</span> <span class="n">eval</span> <span class="n">env</span> <span class="n">expr</span> <span class="p">=</span> 
+    <span class="k">match</span> <span class="n">expr</span> <span class="k">with</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">n</span><span class="o">),</span> <span class="n">env</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Bool</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Bool</span><span class="p">(</span><span class="n">b</span><span class="o">),</span> <span class="n">env</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Id</span><span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="p">-&gt;</span> 
+        <span class="k">let</span> <span class="n">value</span> <span class="p">=</span> <span class="nn">Map</span><span class="p">.</span><span class="n">find</span> <span class="n">id</span> <span class="n">env</span>
+        <span class="n">value</span><span class="p">,</span> <span class="n">env</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Func</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="o">_,</span> <span class="n">arity</span><span class="p">)</span> <span class="p">-&gt;</span>
+        <span class="k">let</span> <span class="n">updatedEnv</span> <span class="p">=</span> <span class="nn">Map</span><span class="p">.</span><span class="n">add</span> <span class="n">name</span> <span class="p">(</span><span class="nn">Expr</span><span class="p">.</span><span class="nc">Func</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">parameters</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">env</span><span class="p">,</span> <span class="n">arity</span><span class="o">))</span> <span class="n">env</span>
+        <span class="nn">Expr</span><span class="p">.</span><span class="nc">Bool</span><span class="p">(</span><span class="bp">true</span><span class="o">),</span> <span class="n">updatedEnv</span>  <span class="c1">// Возвращаем Bool просто для обозначения успешного определения функции</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Call</span><span class="p">(</span><span class="n">funcName</span><span class="p">,</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">SimpleList</span><span class="p">(</span><span class="n">arguments</span><span class="o">),</span> <span class="n">arity</span><span class="p">)</span> <span class="p">-&gt;</span>
+        <span class="k">let</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Func</span><span class="o">(_,</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">SimpleArgs</span><span class="p">(</span><span class="n">params</span><span class="o">),</span> <span class="n">body</span><span class="p">,</span> <span class="n">funcEnv</span><span class="p">,</span> <span class="o">_)</span> <span class="p">=</span> <span class="nn">Map</span><span class="p">.</span><span class="n">find</span> <span class="n">funcName</span> <span class="n">env</span>
+        <span class="k">let</span> <span class="n">updatedEnv</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">fold2</span> <span class="p">(</span><span class="k">fun</span> <span class="n">accEnv</span> <span class="n">param</span> <span class="n">arg</span> <span class="p">-&gt;</span> 
+            <span class="k">let</span> <span class="n">argValue</span><span class="p">,</span> <span class="p">_</span> <span class="p">=</span> <span class="n">eval</span> <span class="n">env</span> <span class="n">arg</span>
+            <span class="nn">Map</span><span class="p">.</span><span class="n">add</span> <span class="n">param</span> <span class="n">argValue</span> <span class="n">accEnv</span>
+        <span class="p">)</span> <span class="n">funcEnv</span> <span class="n">params</span> <span class="n">arguments</span>
+        <span class="n">eval</span> <span class="n">updatedEnv</span> <span class="n">body</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Op</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">operands</span><span class="p">)</span> <span class="p">-&gt;</span>
+        <span class="k">let</span> <span class="n">evaluatedOperands</span> <span class="p">=</span> <span class="nn">List</span><span class="p">.</span><span class="n">map</span> <span class="p">(</span><span class="k">fun</span> <span class="n">e</span> <span class="p">-&gt;</span> <span class="n">fst</span> <span class="p">(</span><span class="n">eval</span> <span class="n">env</span> <span class="n">e</span><span class="o">))</span> <span class="n">operands</span>
+        <span class="k">let</span> <span class="n">result</span> <span class="p">=</span> <span class="k">match</span> <span class="n">op</span><span class="p">,</span> <span class="n">evaluatedOperands</span> <span class="k">with</span>
+            <span class="p">|</span> <span class="s2">"+"</span><span class="p">,</span> <span class="p">[</span><span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span><span class="o">);</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">y</span><span class="o">)]</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">|</span> <span class="s2">"-"</span><span class="p">,</span> <span class="p">[</span><span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span><span class="o">);</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">y</span><span class="o">)]</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span> <span class="p">-</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">|</span> <span class="s2">"*"</span><span class="p">,</span> <span class="p">[</span><span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span><span class="o">);</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">y</span><span class="o">)]</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span> <span class="p">*</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">|</span> <span class="s2">"/"</span><span class="p">,</span> <span class="p">[</span><span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span><span class="o">);</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">y</span><span class="o">)]</span> <span class="p">-&gt;</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Num</span><span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">)</span>
+            <span class="p">|</span> <span class="p">_</span> <span class="p">-&gt;</span> <span class="n">failwith</span> <span class="s2">"eval ERROR: Unsupported operator or operand types"</span>
+        <span class="n">result</span><span class="p">,</span> <span class="n">env</span>
+    <span class="p">|</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Cond</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">thenExpr</span><span class="p">,</span> <span class="n">elseExpr</span><span class="p">)</span> <span class="p">-&gt;</span>
+        <span class="k">let</span> <span class="nn">Expr</span><span class="p">.</span><span class="nc">Bool</span><span class="p">(</span><span class="n">condResult</span><span class="o">),</span> <span class="p">_</span> <span class="p">=</span> <span class="n">eval</span> <span class="n">env</span> <span class="n">condition</span>
+        <span class="k">if</span> <span class="n">condResult</span> <span class="k">then</span> <span class="n">eval</span> <span class="n">env</span> <span class="n">thenExpr</span> <span class="k">else</span> <span class="n">eval</span> <span class="n">env</span> <span class="n">elseExpr</span>
+</code></pre></div></div>
+
+<h4 id="обработка-выражений">Обработка выражений</h4>
+
+<ol>
+  <li><strong>Числа и булевы значения</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Num(n)</code> и <code class="language-plaintext highlighter-rouge">Expr.Bool(b)</code> возвращают свои значения и текущее окружение без изменений.</li>
+    </ul>
+  </li>
+  <li><strong>Идентификаторы</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Id(id)</code> ищет значение идентификатора в окружении и возвращает его.</li>
+    </ul>
+  </li>
+  <li><strong>Функции</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Func(name, parameters, body, _, arity)</code> добавляет функцию в окружение и возвращает булево значение для обозначения успешного определения функции.</li>
+    </ul>
+  </li>
+  <li><strong>Вызовы функций</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Call(funcName, Expr.SimpleList(arguments), arity)</code> находит определение функции в окружении, создает новое окружение для функции, связывая аргументы с их значениями, и вычисляет тело функции.</li>
+    </ul>
+  </li>
+  <li><strong>Операции</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Op(op, operands)</code> вычисляет значения операндов и выполняет соответствующую арифметическую операцию. Поддерживаются операции <code class="language-plaintext highlighter-rouge">+</code>, <code class="language-plaintext highlighter-rouge">-</code>, <code class="language-plaintext highlighter-rouge">*</code> и <code class="language-plaintext highlighter-rouge">/</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Условные выражения</strong>:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Expr.Cond(condition, thenExpr, elseExpr)</code> сначала вычисляет условие. Если результат истинный, вычисляется выражение <code class="language-plaintext highlighter-rouge">thenExpr</code>, иначе <code class="language-plaintext highlighter-rouge">elseExpr</code>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Интерпретатор позволяет выполнять различные выражения и функции, написанные на нашем языке. Например, вычисление факториала может быть реализовано с использованием рекурсивной функции. Интерпретатор обеспечит корректное вычисление значений и поддержку функциональных возможностей языка, таких как замыкания и рекурсия.</p>
+
+<h1 id="реализация-основных-концепций-в-проекте">Реализация основных концепций в проекте</h1>
+
+<h4 id="1-именованные-переменные--let">1. Именованные переменные  (let)</h4>
+
+<p>В данной реализации используется конструкция  <strong>var</strong> для объявления переменных, а не  <strong>let</strong>, что является стандартом во многих функциональных языках. Пример объявления переменной:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var x = 10
+</code></pre></div></div>
+<p>В коде это реализуется через тип  Expr.Var в AST и обрабатывается в  eval функции в  Interpretator.fs.</p>
+
+<h4 id="2-рекурсия">2. Рекурсия</h4>
+
+<p>Рекурсия поддерживается через определение функций, которые могут вызывать сами себя. Пример рекурсивной функции:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def factorial n = if n == 1 then 1 else n * factorial(n - 1)
+</code></pre></div></div>
+<p>Рекурсивные вызовы функций обрабатываются в  Expr.Call в  eval функции, где функция может вызывать сама себя.</p>
+<h4 id="3-ленивое-вычисление">3. Ленивое вычисление</h4>
+
+<p>Ленивое вычисление не реализовано напрямую в данном проекте. Однако, можно имитировать ленивое вычисление через функции, возвращающие другие функции или используя специальные конструкции для отложенных вычислений.</p>
+
+<h4 id="4-функции">4. Функции</h4>
+
+<p>Функции определяются с помощью  def и обрабатываются в  Expr.Func в AST. Они могут принимать параметры и возвращать значения. Пример:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def add x y = x + y
+</code></pre></div></div>
+<p>Функции поддерживают замыкания, так как они могут захватывать и использовать переменные из внешнего окружения.</p>
+<h4 id="5-замыкания">5. Замыкания</h4>
+
+<p>Замыкания реализованы так, что функции могут использовать переменные, определенные вне их тела. Это достигается за счет сохранения окружения  (env) при определении функции:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Expr.Func(name, parameters, body, env, arity)
+</code></pre></div></div>
+<p>Таким образом, функция  “запоминает” окружение, в котором она была создана.</p>
+<h4 id="6-библиотечные-функции-ввод-вывод-файлов">6. Библиотечные функции: ввод-вывод файлов</h4>
+<p>В текущей реализации нет встроенной поддержки ввода-вывода файлов. Для добавления такой функциональности потребуется интеграция с F# API для работы с файлами.</p>
+
+<h4 id="7-списки---последовательности">7. Списки  / Последовательности</h4>
+
+<p>Списки поддерживаются через конструкцию  SimpleList в AST. Пример использования:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[1, 2, 3, 4]
+</code></pre></div></div>
+<p>Списки обрабатываются в  Expr.SimpleList и могут быть использованы в различных выражениях и функциях.</p>
+
+<h4 id="8-библиотечные-функции-спискипоследовательности">8. Библиотечные функции: списки/последовательности</h4>
+
+<p>Операции над списками, такие как map, reduce, filter, не реализованы в данной версии и могут быть добавлены пользователем через определение соответствующих функций в языке.</p>
+
+<h4 id="9-библиотечные-функции-спискипоследовательности">9. Библиотечные функции: списки/последовательности</h4>
+
+<p>Функция <strong>sout</strong> используется для вывода значений. Вот как это может выглядеть в вашем языке:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sout("Hello, World!")
+</code></pre></div></div>
+
+<p>Таким образом, хотя базовая инфраструктура языка уже поддерживает ключевые функциональные концепции, расширение его возможностей требует дополнительной работы и возможно интеграции с существующими библиотеками F#. Это позволит использовать полный потенциал функционального программирования и улучшить возможности языка для решения более сложных задач.</p>
+
+<h2 class="post-list-heading">Posts</h2>
+    <ul class="post-list"><li><span class="post-meta">May 21, 2024</span>
+        <h3>
+          <a class="post-link" href="/jekyll/update/2024/05/21/welcome-to-jekyll.html">
+            Welcome to Jekyll!
+          </a>
+        </h3></li></ul>
+
+    <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p></div>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Your awesome title</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Your awesome title</li><li><a class="u-email" href="mailto:your-email@example.com">your-email@example.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/jekyll"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">jekyll</span></a></li><li><a href="https://www.twitter.com/jekyllrb"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">jekyllrb</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
